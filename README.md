@@ -53,5 +53,5 @@ Building upon the extracted data, the next step is to develop an AI-powered chat
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/mussaussie/Financial_Analyst_bot.git
-   cd Financial_Analyst_bot
+   git clone [https://github.com/mussaussie/Financial_Analyst_bot.git](https://github.com/yogeshkasar778/GFC_Financial_Insight_Chatbot_for_BCG)
+
