@@ -1,1 +1,1 @@
-# GFC-Financial-Analysis-Chatbot---GenAI
+# GFC Financial Insight Chatbot
