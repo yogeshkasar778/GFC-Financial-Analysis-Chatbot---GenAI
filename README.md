@@ -29,7 +29,3 @@ The project was inspired by real-world consulting scenarios, aimed at transformi
 ## Installation
 
 1. **Clone the repository**
-
-```bash
-git clone https://github.com/mussaussie/Financial_Analyst_bot.git
-cd Financial_Analyst_bot
