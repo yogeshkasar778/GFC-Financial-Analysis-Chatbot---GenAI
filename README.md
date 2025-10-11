@@ -56,7 +56,8 @@ Building upon the extracted data, the next step is to develop an AI-powered chat
 
  1. **GFC Financial Insight Chatbot UI**
    
-   ![Screenshot](images/<img width="767" height="820" alt="Screenshot 2025-10-12 014326" src="https://github.com/user-attachments/assets/546e3bcd-dfff-46a1-9875-9fa645278478" />)
+   (images/<img width="767" height="820" alt="Screenshot 2025-10-12 014326" src="https://github.com/user-attachments/assets/546e3bcd-dfff-46a1-9875-9fa645278478" />)
+
 
 
 
