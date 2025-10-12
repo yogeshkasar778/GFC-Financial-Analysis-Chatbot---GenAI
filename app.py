@@ -124,7 +124,7 @@ class GroqFinancialChatbot:
             )
             return response.choices[0].message.content
         except GroqError as e:
-            return f"⚠️ LLM Error: {e}"
+            return f" LLM Error: {e}"
 
 BOT = GroqFinancialChatbot(df=df)
 
@@ -158,7 +158,7 @@ def run_flask():
 # STREAMLIT FRONTEND
 # ===============================
 def run_streamlit():
-    st.set_page_config(page_title="💹 GFC Financial Chatbot", layout="centered")
+    st.set_page_config(page_title="GFC Financial Chatbot", layout="centered")
     st.title("🤖 GFC Financial Insight Chatbot")
     st.markdown("Ask about revenue, profit trends, or financial insights for Microsoft, Tesla, and Apple.")
 
@@ -185,9 +185,9 @@ def run_streamlit():
             if res.status_code == 200:
                 bot_reply = res.json().get("response", "No reply from Groq LLM.")
             else:
-                bot_reply = f"⚠️ Error: {res.text}"
+                bot_reply = f" Error: {res.text}"
         except Exception as e:
-            bot_reply = f"⚠️ Cannot reach Flask server: {e}"
+            bot_reply = f" Cannot reach Flask server: {e}"
 
         # Display response
         st.chat_message("assistant").markdown(bot_reply)
