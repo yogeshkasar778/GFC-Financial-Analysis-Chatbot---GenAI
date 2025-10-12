@@ -9,15 +9,14 @@ import streamlit as st
 from groq import Groq, GroqError
 import matplotlib.pyplot as plt
 
-# ===============================
+
 # CONFIGURATION
-# ===============================
 DATA_PATH = "financial_analysis_results.csv"  # or your Excel path
 GROQ_API_KEY = "API_KEY"  # replace with your Groq API key
 
-# ===============================
+
 # LOAD FINANCIAL DATA
-# ===============================
+
 def load_financial_data(path):
     if path.endswith(".csv"):
         df = pd.read_csv(path)
@@ -39,9 +38,9 @@ def load_financial_data(path):
 
 df = load_financial_data(DATA_PATH)
 
-# ===============================
+
 # RULE-BASED RESPONSE
-# ===============================
+
 def rule_based_response(user_text):
     text = user_text.lower()
     companies = ['microsoft', 'apple', 'tesla']
@@ -70,9 +69,9 @@ def rule_based_response(user_text):
 
     return None
 
-# ===============================
+
 # GENERATE COMPACT SUMMARY FOR LLM
-# ===============================
+
 def generate_summary_context(df, company=None, max_years=5):
     if company:
         dfc = df[df['Company'].str.lower() == company.lower()]
@@ -89,9 +88,9 @@ def generate_summary_context(df, company=None, max_years=5):
     dfc = dfc[[c for c in key_cols if c in dfc.columns]]
     return dfc.to_markdown(index=False)
 
-# ===============================
+
 # GROQ LLM CHATBOT
-# ===============================
+
 class GroqFinancialChatbot:
     def __init__(self, df):
         self.df = df
@@ -128,9 +127,9 @@ class GroqFinancialChatbot:
 
 BOT = GroqFinancialChatbot(df=df)
 
-# ===============================
+
 # FLASK BACKEND
-# ===============================
+
 app = Flask(__name__)
 
 @app.route('/chat', methods=['POST'])
@@ -154,9 +153,8 @@ def health():
 def run_flask():
     app.run(host='127.0.0.1', port=5000, debug=False, use_reloader=False)
 
-# ===============================
 # STREAMLIT FRONTEND
-# ===============================
+
 def run_streamlit():
     st.set_page_config(page_title="GFC Financial Chatbot", layout="centered")
     st.title("🤖 GFC Financial Insight Chatbot")
@@ -193,9 +191,9 @@ def run_streamlit():
         st.chat_message("assistant").markdown(bot_reply)
         st.session_state.messages.append({"role": "assistant", "content": bot_reply})
 
-# ===============================
+
 # MAIN
-# ===============================
+
 if __name__ == "__main__":
     flask_thread = Thread(target=run_flask)
     flask_thread.daemon = True
